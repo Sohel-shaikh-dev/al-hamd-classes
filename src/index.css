@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-purple: #4331A8;
+  --color-brand-red: #F22E2E;
+  --color-brand-magenta: #E62B8A;
+  --color-brand-teal: #18B7C9;
+  --color-brand-yellow: #F7C32E;
+  --color-brand-cream: #FFF8D9;
+  --color-brand-dark: #1E1E1E;
+
+  --font-heading: "Oswald", sans-serif;
+  --font-script: "Great Vibes", cursive;
+  --font-body: "Inter", sans-serif;
+
+  --animate-fade-in: fade-in 0.5s ease-out;
+  --animate-slide-up: slide-up 0.5s ease-out;
+
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes slide-up {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  @keyframes slide-down {
+    0% { transform: translateY(-100%); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateY(100%); opacity: 0; }
+  }
+}
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading uppercase;
+  }
+}
+
+.gradient-hero {
+  background: linear-gradient(135deg, #4331A8 0%, #E62B8A 50%, #F22E2E 100%);
+}
+
+.gradient-cta {
+  background: linear-gradient(90deg, #F22E2E 0%, #F7C32E 100%);
+}
+
+.glass-card {
+  @apply bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl shadow-xl;
+}
+
+.pill-card {
+  @apply bg-white border-2 rounded-full px-6 py-2 shadow-sm transition-all hover:shadow-md;
+}
