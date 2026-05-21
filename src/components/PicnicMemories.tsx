@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Users, Trees, PartyPopper, Dribbble, Award, Smile, HeartHandshake, Image as ImageIcon, ChevronRight, Palmtree, X } from 'lucide-react';
+import { Users, PartyPopper, Dribbble, Award, Smile, HeartHandshake, Palmtree, X } from 'lucide-react';
 import OptimizedImage from './OptimizedImage';
 import { motion, AnimatePresence } from 'framer-motion';
 

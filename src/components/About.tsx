@@ -1,4 +1,4 @@
-import { BookOpen, Star, Users, Trophy, Target, ChevronRight, BookMarked } from 'lucide-react'
+import { BookOpen, Star, Users, Trophy, Target, BookMarked } from 'lucide-react'
 import OptimizedImage from './OptimizedImage'
 
 const About = () => {
