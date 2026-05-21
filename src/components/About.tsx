@@ -82,16 +82,16 @@ const About = () => {
               
               {/* Founder 1 (Desktop) */}
               <div className="flex items-start gap-4 w-1/2 group">
-                <div className="w-16 h-16 rounded-full border-[3px] border-white shadow-lg overflow-hidden flex-shrink-0 group-hover:border-[#451272] transition-colors">
-                  <OptimizedImage src="/Assets/Co-founder.png" alt="Kasim Shaikh" className="w-full h-full object-cover" />
+                <div className="w-16 h-16 rounded-full border-[3px] border-white shadow-lg overflow-hidden flex-shrink-0 group-hover:border-[#D71D3A] transition-colors">
+                  <OptimizedImage src="/Assets/Founder.png" alt="Zeenat Shaikh" className="w-full h-full object-cover" />
                 </div>
                 <div className="flex flex-col">
-                  <h5 className="text-[#11052C] font-bold text-[19px] leading-none mb-1 uppercase font-heading tracking-tight">Kasim Shaikh</h5>
+                  <h5 className="text-[#11052C] font-bold text-[19px] leading-none mb-1 uppercase font-heading tracking-tight">Zeenat Shaikh</h5>
                   <span className="text-[#D71D3A] font-bold text-[11px] uppercase tracking-widest mb-2.5">Founder & Director</span>
                   <div className="relative">
                     <span className="absolute -left-2 -top-1.5 text-2xl text-[#451272] font-serif font-bold leading-none opacity-80">"</span>
                     <p className="text-[#4A3E5D] text-[13px] font-medium leading-[1.5] pl-3 italic">
-                      Our mission is simple – to provide the right guidance, strong foundation, and a positive environment for every student.
+                      We believe in care, support, and mentorship to help students build confidence and achieve their best.
                     </p>
                   </div>
                 </div>
@@ -99,16 +99,16 @@ const About = () => {
 
               {/* Founder 2 (Desktop) */}
               <div className="flex items-start gap-4 w-1/2 group">
-                <div className="w-16 h-16 rounded-full border-[3px] border-white shadow-lg overflow-hidden flex-shrink-0 group-hover:border-[#D71D3A] transition-colors">
-                  <OptimizedImage src="/Assets/Founder.png" alt="Zeenat Shaikh" className="w-full h-full object-cover" />
+                <div className="w-16 h-16 rounded-full border-[3px] border-white shadow-lg overflow-hidden flex-shrink-0 group-hover:border-[#451272] transition-colors">
+                  <OptimizedImage src="/Assets/Co-founder.png" alt="Kasim Shaikh" className="w-full h-full object-cover" />
                 </div>
                 <div className="flex flex-col">
-                  <h5 className="text-[#11052C] font-bold text-[19px] leading-none mb-1 uppercase font-heading tracking-tight">Zeenat Shaikh</h5>
+                  <h5 className="text-[#11052C] font-bold text-[19px] leading-none mb-1 uppercase font-heading tracking-tight">Kasim Shaikh</h5>
                   <span className="text-[#D71D3A] font-bold text-[11px] uppercase tracking-widest mb-2.5">Co-Founder & Director</span>
                   <div className="relative">
                     <span className="absolute -left-2 -top-1.5 text-2xl text-[#451272] font-serif font-bold leading-none opacity-80">"</span>
                     <p className="text-[#4A3E5D] text-[13px] font-medium leading-[1.5] pl-3 italic">
-                      We believe in care, support, and mentorship to help students build confidence and achieve their best.
+                      Our mission is simple – to provide the right guidance, strong foundation, and a positive environment for every student.
                     </p>
                   </div>
                 </div>
@@ -217,16 +217,16 @@ const About = () => {
               
               {/* Founder 1 (Mobile) */}
               <div className="flex items-start gap-4 group">
-                <div className="w-16 h-16 rounded-full border-[3px] border-white shadow-lg overflow-hidden flex-shrink-0 group-hover:border-[#451272] transition-colors">
-                  <OptimizedImage src="/Assets/Co-founder.png" alt="Kasim Shaikh" className="w-full h-full object-cover" />
+                <div className="w-16 h-16 rounded-full border-[3px] border-white shadow-lg overflow-hidden flex-shrink-0 group-hover:border-[#D71D3A] transition-colors">
+                  <OptimizedImage src="/Assets/Founder.png" alt="Zeenat Shaikh" className="w-full h-full object-cover" />
                 </div>
                 <div className="flex flex-col">
-                  <h5 className="text-[#11052C] font-bold text-lg leading-none mb-1 uppercase font-heading">Kasim Shaikh</h5>
+                  <h5 className="text-[#11052C] font-bold text-lg leading-none mb-1 uppercase font-heading">Zeenat Shaikh</h5>
                   <span className="text-[#D71D3A] font-bold text-[10px] uppercase tracking-widest mb-2.5">Founder & Director</span>
                   <div className="relative">
                     <span className="absolute -left-2 -top-1.5 text-2xl text-[#451272] font-serif font-bold leading-none opacity-80">"</span>
                     <p className="text-[#4A3E5D] text-[13px] font-medium leading-[1.6] pl-3 italic">
-                      Our mission is simple – to provide the right guidance, strong foundation, and a positive environment for every student.
+                      We believe in care, support, and mentorship to help students build confidence and achieve their best.
                     </p>
                   </div>
                 </div>
@@ -234,16 +234,16 @@ const About = () => {
 
               {/* Founder 2 (Mobile) */}
               <div className="flex items-start gap-4 group">
-                <div className="w-16 h-16 rounded-full border-[3px] border-white shadow-lg overflow-hidden flex-shrink-0 group-hover:border-[#D71D3A] transition-colors">
-                  <OptimizedImage src="/Assets/Founder.png" alt="Zeenat Shaikh" className="w-full h-full object-cover" />
+                <div className="w-16 h-16 rounded-full border-[3px] border-white shadow-lg overflow-hidden flex-shrink-0 group-hover:border-[#451272] transition-colors">
+                  <OptimizedImage src="/Assets/Co-founder.png" alt="Kasim Shaikh" className="w-full h-full object-cover" />
                 </div>
                 <div className="flex flex-col">
-                  <h5 className="text-[#11052C] font-bold text-lg leading-none mb-1 uppercase font-heading">Zeenat Shaikh</h5>
+                  <h5 className="text-[#11052C] font-bold text-lg leading-none mb-1 uppercase font-heading">Kasim Shaikh</h5>
                   <span className="text-[#D71D3A] font-bold text-[10px] uppercase tracking-widest mb-2.5">Co-Founder & Director</span>
                   <div className="relative">
                     <span className="absolute -left-2 -top-1.5 text-2xl text-[#451272] font-serif font-bold leading-none opacity-80">"</span>
                     <p className="text-[#4A3E5D] text-[13px] font-medium leading-[1.6] pl-3 italic">
-                      We believe in care, support, and mentorship to help students build confidence and achieve their best.
+                      Our mission is simple – to provide the right guidance, strong foundation, and a positive environment for every student.
                     </p>
                   </div>
                 </div>
