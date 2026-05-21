@@ -48,7 +48,7 @@ const FAQ = () => {
     },
     {
       q: "How can I inquire about the fee structure?",
-      a: "You can call us directly at 98202 04346 or visit our center for a free counseling session where we can discuss the fee structure based on the course selected.",
+      a: "You can call us directly at +91 98703 26626 or visit our center for a free counseling session where we can discuss the fee structure based on the course selected.",
       icon: IndianRupee,
       iconBg: "bg-[#E0F2FE]",
       iconColor: "text-[#0284C7]"
@@ -150,7 +150,7 @@ const FAQ = () => {
                  <Phone size={16} className="md:w-[18px] md:h-[18px]" />
                  Call Us Now
               </a>
-              <a href="https://wa.me/919820204346?text=Hello%20AL-HAMD%20CLASSES,%20I%20have%20some%20queries." target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto bg-[#00A859] hover:bg-[#00914D] text-white py-3.5 px-6 md:py-4 md:px-8 rounded-[0.85rem] md:rounded-xl font-bold text-[13px] md:text-[15px] flex items-center justify-center gap-2 transition-all hover:-translate-y-0.5 hover:shadow-xl shadow-[#00A859]/30 whitespace-nowrap">
+              <a href="https://wa.me/919870326626?text=Hello%20AL-HAMD%20CLASSES,%20I%20have%20some%20queries." target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto bg-[#00A859] hover:bg-[#00914D] text-white py-3.5 px-6 md:py-4 md:px-8 rounded-[0.85rem] md:rounded-xl font-bold text-[13px] md:text-[15px] flex items-center justify-center gap-2 transition-all hover:-translate-y-0.5 hover:shadow-xl shadow-[#00A859]/30 whitespace-nowrap">
                  <FaWhatsapp size={16} className="md:w-[18px] md:h-[18px]" />
                  WhatsApp Inquiry
                  <ArrowRight size={16} className="md:w-[18px] md:h-[18px] ml-1" />

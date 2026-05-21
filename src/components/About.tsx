@@ -1,4 +1,5 @@
 import { BookOpen, Star, Users, Trophy, Target, ChevronRight, BookMarked } from 'lucide-react'
+import OptimizedImage from './OptimizedImage'
 
 const About = () => {
   return (
@@ -58,8 +59,8 @@ const About = () => {
             {/* Image Box */}
             <div className="relative">
               <div className="relative rounded-[2.5rem] md:rounded-[3rem] border-[8px] md:border-[12px] border-white shadow-[0_30px_60px_rgba(0,0,0,0.08)] overflow-hidden">
-                <img 
-                  src="/Assets/alhamd_about_classroom.png" 
+                <OptimizedImage 
+                  src="/Assets/First_image.png" 
                   alt="AL-HAMD Classroom" 
                   className="w-full h-[400px] sm:h-[500px] lg:h-[650px] object-cover object-center"
                 />
@@ -82,7 +83,7 @@ const About = () => {
               {/* Founder 1 (Desktop) */}
               <div className="flex items-start gap-4 w-1/2 group">
                 <div className="w-16 h-16 rounded-full border-[3px] border-white shadow-lg overflow-hidden flex-shrink-0 group-hover:border-[#451272] transition-colors">
-                  <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=256&q=80" alt="Kasim Shaikh" className="w-full h-full object-cover" />
+                  <OptimizedImage src="/Assets/Co-founder.png" alt="Kasim Shaikh" className="w-full h-full object-cover" />
                 </div>
                 <div className="flex flex-col">
                   <h5 className="text-[#11052C] font-bold text-[19px] leading-none mb-1 uppercase font-heading tracking-tight">Kasim Shaikh</h5>
@@ -99,7 +100,7 @@ const About = () => {
               {/* Founder 2 (Desktop) */}
               <div className="flex items-start gap-4 w-1/2 group">
                 <div className="w-16 h-16 rounded-full border-[3px] border-white shadow-lg overflow-hidden flex-shrink-0 group-hover:border-[#D71D3A] transition-colors">
-                  <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=256&q=80" alt="Zeenat Shaikh" className="w-full h-full object-cover" />
+                  <OptimizedImage src="/Assets/Founder.png" alt="Zeenat Shaikh" className="w-full h-full object-cover" />
                 </div>
                 <div className="flex flex-col">
                   <h5 className="text-[#11052C] font-bold text-[19px] leading-none mb-1 uppercase font-heading tracking-tight">Zeenat Shaikh</h5>
@@ -183,7 +184,7 @@ const About = () => {
             {/* Feature Cards */}
             <div className="flex flex-col gap-4 mb-4">
               {/* Feature 1 */}
-              <div className="bg-white rounded-[1.5rem] md:rounded-[2rem] shadow-[0_10px_30px_rgba(0,0,0,0.03)] p-4 md:p-6 flex items-center justify-between group hover:shadow-[0_15px_40px_rgba(69,18,114,0.1)] transition-all cursor-pointer border border-gray-100">
+              <div className="bg-white rounded-[1.5rem] md:rounded-[2rem] shadow-[0_10px_30px_rgba(0,0,0,0.03)] p-4 md:p-6 flex items-center group hover:shadow-[0_15px_40px_rgba(69,18,114,0.1)] transition-all border border-gray-100">
                 <div className="flex items-center gap-4 md:gap-6">
                   <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-[#EAE0F5] flex items-center justify-center flex-shrink-0 transition-transform group-hover:scale-105">
                     <Target className="text-[#451272] w-7 h-7 md:w-8 md:h-8" />
@@ -193,13 +194,11 @@ const About = () => {
                     <p className="text-[#4A3E5D] text-xs md:text-[15px] font-medium leading-snug max-w-[240px] md:max-w-md">Well-organized batches with a focus on conceptual clarity and regular testing.</p>
                   </div>
                 </div>
-                <div className="w-12 h-12 md:w-14 md:h-14 rounded-[14px] bg-[#451272] flex items-center justify-center flex-shrink-0 group-hover:bg-[#340c57] transition-colors shadow-md">
-                  <ChevronRight className="text-white w-6 h-6 md:w-7 md:h-7" />
-                </div>
+
               </div>
 
               {/* Feature 2 */}
-              <div className="bg-white rounded-[1.5rem] md:rounded-[2rem] shadow-[0_10px_30px_rgba(0,0,0,0.03)] p-4 md:p-6 flex items-center justify-between group hover:shadow-[0_15px_40px_rgba(215,29,58,0.1)] transition-all cursor-pointer border border-gray-100">
+              <div className="bg-white rounded-[1.5rem] md:rounded-[2rem] shadow-[0_10px_30px_rgba(0,0,0,0.03)] p-4 md:p-6 flex items-center group hover:shadow-[0_15px_40px_rgba(215,29,58,0.1)] transition-all border border-gray-100">
                 <div className="flex items-center gap-4 md:gap-6">
                   <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-[#FCE5E8] flex items-center justify-center flex-shrink-0 transition-transform group-hover:scale-105">
                     <Users className="text-[#D71D3A] w-7 h-7 md:w-8 md:h-8" />
@@ -209,9 +208,7 @@ const About = () => {
                     <p className="text-[#4A3E5D] text-xs md:text-[15px] font-medium leading-snug max-w-[240px] md:max-w-md">Smaller batch sizes to ensure every student receives the guidance they need to excel.</p>
                   </div>
                 </div>
-                <div className="w-12 h-12 md:w-14 md:h-14 rounded-[14px] bg-[#D71D3A] flex items-center justify-center flex-shrink-0 group-hover:bg-[#b81831] transition-colors shadow-md">
-                  <ChevronRight className="text-white w-6 h-6 md:w-7 md:h-7" />
-                </div>
+
               </div>
             </div>
 
@@ -221,7 +218,7 @@ const About = () => {
               {/* Founder 1 (Mobile) */}
               <div className="flex items-start gap-4 group">
                 <div className="w-16 h-16 rounded-full border-[3px] border-white shadow-lg overflow-hidden flex-shrink-0 group-hover:border-[#451272] transition-colors">
-                  <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=256&q=80" alt="Kasim Shaikh" className="w-full h-full object-cover" />
+                  <OptimizedImage src="/Assets/Co-founder.png" alt="Kasim Shaikh" className="w-full h-full object-cover" />
                 </div>
                 <div className="flex flex-col">
                   <h5 className="text-[#11052C] font-bold text-lg leading-none mb-1 uppercase font-heading">Kasim Shaikh</h5>
@@ -238,7 +235,7 @@ const About = () => {
               {/* Founder 2 (Mobile) */}
               <div className="flex items-start gap-4 group">
                 <div className="w-16 h-16 rounded-full border-[3px] border-white shadow-lg overflow-hidden flex-shrink-0 group-hover:border-[#D71D3A] transition-colors">
-                  <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=256&q=80" alt="Zeenat Shaikh" className="w-full h-full object-cover" />
+                  <OptimizedImage src="/Assets/Founder.png" alt="Zeenat Shaikh" className="w-full h-full object-cover" />
                 </div>
                 <div className="flex flex-col">
                   <h5 className="text-[#11052C] font-bold text-lg leading-none mb-1 uppercase font-heading">Zeenat Shaikh</h5>

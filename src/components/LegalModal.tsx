@@ -116,7 +116,7 @@ const LegalModal = ({ isOpen, onClose, type }: LegalModalProps) => {
                     <span className="opacity-90">
                       356, Behram Nagar, Bandra East, Mumbai, Maharashtra 400051<br />
                       Email: kasimjamadar@gmail.com<br />
-                      Phone: 098202 04346
+                      Phone: +91 98703 26626
                     </span>
                   </div>
                 </section>

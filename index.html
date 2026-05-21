@@ -7,10 +7,17 @@
     <title>AL-HAMD CLASSES | Best Coaching Classes in Bandra East</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=block">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=block" rel="stylesheet">
+    <link rel="preload" as="image" href="/Assets/hero%20bg%20for%20laptop%20view.jpeg" media="(min-width: 1024px)">
+    <link rel="preload" as="image" href="/Assets/hero%20bg%20%20for%20mobile%20view.jpeg" media="(max-width: 1023px)">
   </head>
   <body class="bg-brand-cream text-brand-dark font-body">
-    <div id="root"></div>
+    <div id="root">
+      <div style="position:fixed;top:0;left:0;width:100vw;height:100vh;background-color:#1B053A;z-index:9999;display:flex;align-items:center;justify-content:center;">
+        <!-- Simple spinner or brand color to prevent white flash -->
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

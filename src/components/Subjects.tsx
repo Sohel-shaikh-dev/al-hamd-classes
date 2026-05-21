@@ -1,14 +1,16 @@
-import { GraduationCap, Star, BookOpen, FlaskConical, Beaker, Calculator, Microscope, Laptop, ClipboardList, Users, Trophy } from 'lucide-react'
+import { GraduationCap, Star, BookOpen, FlaskConical, Calculator, Laptop, ClipboardList, Users, Trophy, TrendingUp, Briefcase, Monitor } from 'lucide-react'
+import OptimizedImage from './OptimizedImage'
 
 const Subjects = () => {
   const subjectsList = [
     { name: "English", desc: "Grammar, Literature &\nComprehension", icon: <BookOpen className="w-5 h-5 md:w-6 md:h-6 text-[#451272]"/>, bg: "bg-[#F3EBF8]" },
-    { name: "Physics", desc: "Conceptual Clarity &\nNumerical Training", icon: <FlaskConical className="w-5 h-5 md:w-6 md:h-6 text-[#D71D3A]"/>, bg: "bg-[#FCE5E8]" },
-    { name: "Chemistry", desc: "Theory, Reactions &\nProblem Solving", icon: <Beaker className="w-5 h-5 md:w-6 md:h-6 text-[#D71D3A]"/>, bg: "bg-[#FCE5E8]" },
+    { name: "Science", desc: "Physics, Chemistry &\nBiology Fundamentals", icon: <FlaskConical className="w-5 h-5 md:w-6 md:h-6 text-[#D71D3A]"/>, bg: "bg-[#FCE5E8]" },
     { name: "Mathematics", desc: "Concept Building &\nAdvanced Problem Solving", icon: <Calculator className="w-5 h-5 md:w-6 md:h-6 text-[#451272]"/>, bg: "bg-[#F3EBF8]" },
-    { name: "Biology", desc: "In-depth Learning &\nExam Preparation", icon: <Microscope className="w-5 h-5 md:w-6 md:h-6 text-[#0D9488]"/>, bg: "bg-[#E0F2F1]" },
     { name: "Computer Science", desc: "Programming, Logic &\nPractical Applications", icon: <Laptop className="w-5 h-5 md:w-6 md:h-6 text-[#D71D3A]"/>, bg: "bg-[#FCE5E8]" },
     { name: "Accountancy (HSC)", desc: "Financial Accounting &\nManagement Principles", icon: <ClipboardList className="w-5 h-5 md:w-6 md:h-6 text-[#D71D3A]"/>, bg: "bg-[#FCE5E8]" },
+    { name: "Marketing", desc: "Strategies, Branding &\nMarket Analysis", icon: <TrendingUp className="w-5 h-5 md:w-6 md:h-6 text-[#0D9488]"/>, bg: "bg-[#E0F2F1]" },
+    { name: "Business Management", desc: "Organization, Leadership &\nOperations", icon: <Briefcase className="w-5 h-5 md:w-6 md:h-6 text-[#451272]"/>, bg: "bg-[#F3EBF8]" },
+    { name: "Information Technology", desc: "Networking, Systems &\nTech Solutions", icon: <Monitor className="w-5 h-5 md:w-6 md:h-6 text-[#D71D3A]"/>, bg: "bg-[#FCE5E8]" },
   ]
 
   const HeaderGroup = () => (
@@ -36,10 +38,10 @@ const Subjects = () => {
   const ImageGroup = () => (
     <div className="relative w-full h-full">
       <div className="relative rounded-[2.5rem] md:rounded-[3rem] border-[8px] md:border-[12px] border-[#F7EDE1] shadow-[0_30px_60px_rgba(0,0,0,0.06)] overflow-hidden w-full h-full min-h-[350px] md:min-h-[450px] lg:min-h-[600px] bg-white">
-        <img 
-          src="/Assets/alhamd_subjects_classroom.png" 
+        <OptimizedImage 
+          src="/Assets/Second_image.png" 
           alt="AL-HAMD Classroom Learning" 
-          className="w-full h-full object-cover absolute inset-0"
+          className="w-full h-full object-contain absolute inset-0"
         />
       </div>
       

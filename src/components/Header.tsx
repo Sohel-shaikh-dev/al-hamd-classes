@@ -1,9 +1,39 @@
-import { Phone, Mail, Menu, X, Home, User, BookOpen, GraduationCap, Trophy, FileText, PhoneCall, MessageCircle, Award, ShieldCheck, MapPin } from 'lucide-react'
-import { useState } from 'react'
+import { Phone, Menu, X, Home, User, BookOpen, GraduationCap, Trophy, FileText, PhoneCall, MessageCircle, Award, ShieldCheck, MapPin, Code } from 'lucide-react'
+import { useState, useEffect } from 'react'
+import OptimizedImage from './OptimizedImage'
 
-const Header = () => {
+const tickerItems = [
+  "⭐ Trusted Coaching Institute Since 2002",
+  "🏆 22+ Years of Academic Excellence",
+  "📚 School + Degree + Special Batches Available",
+  "🎯 Expert Faculty for Board & Competitive Exams",
+  "💯 Personalized Attention for Every Student",
+  "📍 Bandra East, Mumbai",
+  "📞 Admissions Open Now",
+  "🔥 Limited Seats Available for New Batch",
+  "🎓 Strong Academic Results Every Year",
+  "✨ Modern Learning Environment",
+  "📖 Weekly Tests & Performance Tracking",
+  "🚀 Career-Focused Student Guidance"
+]
+
+interface HeaderProps {
+  onOpenDeveloper: () => void;
+}
+
+const Header = ({ onOpenDeveloper }: HeaderProps) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMobileMenuOpen]);
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen)
   }
@@ -14,18 +44,25 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 left-0 w-full z-[100]">
-      {/* Top Contact Strip */}
-      <div className="bg-brand-purple text-white py-2 hidden md:block">
-        <div className="container mx-auto px-6 flex justify-between items-center text-sm font-bold tracking-wider">
-          <div className="flex items-center gap-6">
-            <a href="tel:+919870326626" className="flex items-center gap-2 hover:text-brand-yellow transition-colors">
-              <Phone size={14} /> 9870326626
-            </a>
-            <a href="mailto:kasimjamadar@gmail.com" className="flex items-center gap-2 hover:text-brand-yellow transition-colors lowercase">
-              <Mail size={14} /> kasimjamadar@gmail.com
-            </a>
-          </div>
-          <div>Bandra East, Mumbai</div>
+      {/* Top Announcement Ticker */}
+      <div className="bg-brand-purple text-white py-2.5 overflow-hidden relative shadow-[0_0_15px_rgba(67,49,168,0.5)] border-b border-brand-purple/20">
+        {/* Fade Edges */}
+        <div className="absolute inset-y-0 left-0 w-8 md:w-24 bg-gradient-to-r from-brand-purple to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute inset-y-0 right-0 w-8 md:w-24 bg-gradient-to-l from-brand-purple to-transparent z-10 pointer-events-none"></div>
+        
+        <div className="flex animate-marquee whitespace-nowrap hover:[animation-play-state:paused] w-max">
+          {[...Array(2)].map((_, i) => (
+            <div key={i} className="flex items-center text-[13px] md:text-sm font-bold tracking-wide">
+              {tickerItems.map((item, idx) => (
+                <div key={idx} className="flex items-center group">
+                  <span className="px-6 md:px-10 text-gray-100 group-hover:text-brand-yellow group-hover:scale-105 transition-all cursor-default">
+                    {item}
+                  </span>
+                  <span className="text-white/20 text-xs md:text-sm">•</span>
+                </div>
+              ))}
+            </div>
+          ))}
         </div>
       </div>
 
@@ -34,7 +71,7 @@ const Header = () => {
         <div className="container mx-auto px-4 md:px-6 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="h-10 md:h-12 flex-shrink-0 flex items-center justify-center">
-              <img src="/Alhamd Logo.png" alt="AL-HAMD CLASSES Logo" className="w-auto h-full object-contain drop-shadow-sm" />
+              <OptimizedImage priority={true} src="/Alhamd Logo.png" alt="AL-HAMD CLASSES Logo" className="w-auto h-full object-contain drop-shadow-sm" />
             </div>
             <div className="flex flex-col">
               <span className="text-xl md:text-2xl font-heading font-bold text-brand-purple leading-none uppercase">AL-HAMD</span>
@@ -44,7 +81,7 @@ const Header = () => {
           
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8 font-heading font-bold text-sm tracking-wide">
-            <a href="#" className="hover:text-brand-magenta transition-colors">HOME</a>
+            <a href="#hero" className="hover:text-brand-magenta transition-colors">HOME</a>
             <a href="#about" className="hover:text-brand-magenta transition-colors">ABOUT US</a>
             <a href="#subjects" className="hover:text-brand-magenta transition-colors">SUBJECTS</a>
             <a href="#courses" className="hover:text-brand-magenta transition-colors">COURSES</a>
@@ -60,6 +97,18 @@ const Header = () => {
             >
               ENROLL NOW
             </a>
+
+            {/* About Developer Premium Button */}
+            <button 
+              onClick={onOpenDeveloper}
+              className="hidden lg:flex items-center justify-center bg-white/5 backdrop-blur-md border border-[#E0A82E]/50 text-[#E0A82E] px-4 py-2 rounded-full font-bold text-[11px] uppercase tracking-wider transition-all duration-300 hover:bg-[#E0A82E]/10 hover:border-[#F4C35A] hover:text-[#FFD76A] hover:scale-105 hover:shadow-[0_0_15px_rgba(224,168,46,0.3)] group relative overflow-hidden"
+            >
+              <span className="relative z-10 flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#E0A82E] group-hover:bg-[#FFD76A] group-hover:animate-pulse shadow-[0_0_5px_#E0A82E]"></span>
+                About Developer
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out"></div>
+            </button>
             
             {/* Hamburger Button for Mobile */}
             <button 
@@ -95,7 +144,7 @@ const Header = () => {
             <X size={24} />
           </button>
           
-          <img src="/Alhamd Logo.png" alt="AL-HAMD CLASSES Logo" className="h-16 w-auto object-contain mb-3 drop-shadow-md" />
+          <OptimizedImage priority={true} src="/Alhamd Logo.png" alt="AL-HAMD CLASSES Logo" className="h-16 w-auto object-contain mb-3 drop-shadow-md" />
           <div className="text-center">
             <h3 className="text-2xl font-heading font-bold text-brand-purple leading-none uppercase">AL-HAMD</h3>
             <h4 className="text-xl font-heading font-bold text-brand-red tracking-widest uppercase">CLASSES</h4>
@@ -107,7 +156,7 @@ const Header = () => {
         <div className="flex-1 overflow-y-auto overflow-x-hidden p-6 custom-scrollbar pb-24">
           {/* Navigation Links */}
           <nav className="flex flex-col mb-8">
-            <a href="#" onClick={handleLinkClick} className="flex items-center gap-4 py-4 px-4 bg-brand-purple/5 rounded-xl border-l-4 border-brand-purple text-brand-purple font-bold text-lg mb-2 transition-colors">
+            <a href="#hero" onClick={handleLinkClick} className="flex items-center gap-4 py-4 px-4 bg-brand-purple/5 rounded-xl border-l-4 border-brand-purple text-brand-purple font-bold text-lg mb-2 transition-colors">
               <Home size={22} className="opacity-90" />
               HOME
             </a>
@@ -174,6 +223,25 @@ const Header = () => {
                 </div>
               </div>
             </a>
+
+            {/* About Developer Button (Mobile) */}
+            <button 
+              onClick={() => {
+                onOpenDeveloper();
+                handleLinkClick();
+              }}
+              className="bg-gradient-to-r from-[#0A0A0A] to-[#1A1A1A] text-[#F4C35A] p-1 rounded-2xl shadow-[0_8px_20px_rgba(244,195,90,0.15)] hover:shadow-[0_10px_25px_rgba(244,195,90,0.25)] border border-[#F4C35A]/30 transition-all active:scale-[0.98] group flex w-full"
+            >
+              <div className="flex items-center gap-4 w-full px-4 py-2.5">
+                <div className="bg-[#111] border border-[#F4C35A]/30 text-[#F4C35A] p-2.5 rounded-full shadow-inner group-hover:scale-110 group-hover:bg-[#F4C35A]/10 transition-all">
+                  <Code size={24} />
+                </div>
+                <div className="flex flex-col text-left">
+                  <span className="font-bold text-[16px] leading-tight tracking-wide">ABOUT DEVELOPER</span>
+                  <span className="text-[13px] text-gray-400 font-medium">Crafted by AI MetaWorld ✨</span>
+                </div>
+              </div>
+            </button>
           </div>
 
           {/* Trust Badge Section */}

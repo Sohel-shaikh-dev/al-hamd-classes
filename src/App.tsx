@@ -1,44 +1,69 @@
-import { useState } from 'react'
+import { useState, lazy, Suspense } from 'react'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import About from './components/About'
-import Subjects from './components/Subjects'
-import Courses from './components/Courses'
-import WhyChooseUs from './components/WhyChooseUs'
-import Admissions from './components/Admissions'
-import Results from './components/Results'
-import Location from './components/Location'
-import FAQ from './components/FAQ'
-import Footer from './components/Footer'
 import LegalModal from './components/LegalModal'
 import { MessageCircle } from 'lucide-react'
 
+// Lazy load below-the-fold components to improve initial load time
+const Subjects = lazy(() => import('./components/Subjects'))
+const Courses = lazy(() => import('./components/Courses'))
+const WhyChooseUs = lazy(() => import('./components/WhyChooseUs'))
+const Admissions = lazy(() => import('./components/Admissions'))
+const Results = lazy(() => import('./components/Results'))
+const PicnicMemories = lazy(() => import('./components/PicnicMemories'))
+const Location = lazy(() => import('./components/Location'))
+const FAQ = lazy(() => import('./components/FAQ'))
+const Footer = lazy(() => import('./components/Footer'))
+const DeveloperModal = lazy(() => import('./components/DeveloperModal'))
+
+// A simple loading placeholder
+const SectionLoader = () => (
+  <div className="w-full h-32 flex items-center justify-center bg-gray-50/50">
+    <div className="w-8 h-8 border-4 border-brand-purple border-t-brand-yellow rounded-full animate-spin"></div>
+  </div>
+)
+
 function App() {
   const [legalModal, setLegalModal] = useState<'privacy' | 'terms' | null>(null)
+  const [isDeveloperModalOpen, setIsDeveloperModalOpen] = useState(false)
 
   return (
     <div className="min-h-screen bg-white">
-      <Header />
+      <Header onOpenDeveloper={() => setIsDeveloperModalOpen(true)} />
       
       <main>
         <Hero />
         <About />
-        <Subjects />
-        <Courses />
-        <WhyChooseUs />
-        <Admissions />
-        <Results />
-        <Location />
-        <FAQ />
+        
+        <Suspense fallback={<SectionLoader />}>
+          <Subjects />
+          <Courses />
+          <WhyChooseUs />
+          <Admissions />
+          <Results />
+          <PicnicMemories />
+          <Location />
+          <FAQ />
+        </Suspense>
       </main>
       
-      <Footer onOpenLegal={setLegalModal} />
+      <Suspense fallback={<SectionLoader />}>
+        <Footer onOpenLegal={setLegalModal} onOpenDeveloper={() => setIsDeveloperModalOpen(true)} />
+      </Suspense>
 
       <LegalModal 
         isOpen={!!legalModal} 
         type={legalModal} 
         onClose={() => setLegalModal(null)} 
       />
+
+      <Suspense fallback={null}>
+        <DeveloperModal 
+          isOpen={isDeveloperModalOpen}
+          onClose={() => setIsDeveloperModalOpen(false)}
+        />
+      </Suspense>
 
       {/* Floating CTAs */}
       <div className="fixed bottom-6 right-6 z-[999]">

@@ -64,10 +64,10 @@ const WhyChooseUs = () => {
   ]
 
   const reviews = [
-    { name: "Mazna Shaikh", initial: "M", bg: "bg-brand-purple", text: "Alhamd classes is very well experienced and having a excellent teachers .this is a right decision to take admission in this classes. Everything is enjoyable and good." },
     { name: "Farhan Ansari", initial: "F", bg: "bg-brand-red", text: "AL-HAMD classes not only best and best but also ladder to success. Study is the only way to complete your life dreams and reaching the hights." },
     { name: "Yasmin Khan", initial: "Y", bg: "bg-brand-purple", text: "It was a very great experience to learn n to enhance my self with the great & amazing teachers, they actually work on every student." },
-    { name: "Shaikh Nasiha", initial: "S", bg: "bg-brand-red", text: "They are doing amazing work to get their students excellent achievement. Experienced Teachers they have, regular test, feedback, HW, and other academic stuff is very helpful." }
+    { name: "Shaikh Nasiha", initial: "S", bg: "bg-brand-red", text: "They are doing amazing work to get their students excellent achievement. Experienced Teachers they have, regular test, feedback, HW, and other academic stuff is very helpful." },
+    { name: "Mazna Shaikh", initial: "M", bg: "bg-brand-purple", text: "Alhamd classes is very well experienced and having a excellent teachers .this is a right decision to take admission in this classes. Everything is enjoyable and good." }
   ]
 
   return (

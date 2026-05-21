@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Trophy, Star, ChevronLeft, ChevronRight } from 'lucide-react'
+import OptimizedImage from './OptimizedImage'
 
 const Results = () => {
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -62,7 +63,7 @@ const Results = () => {
                     index === currentIndex ? "opacity-100 z-10" : "opacity-0 z-0"
                   }`}
                 >
-                  <img 
+                  <OptimizedImage 
                     src={res.src} 
                     alt={res.alt} 
                     className="max-w-full max-h-full object-contain p-2 md:p-4 drop-shadow-2xl"
@@ -86,13 +87,13 @@ const Results = () => {
             </button>
             
             {/* Dots indicator */}
-            <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-3 z-30 bg-black/30 px-4 py-2.5 rounded-full backdrop-blur-md shadow-lg border border-white/20">
+            <div className="mt-6 flex gap-3 z-30 bg-[#2C1052] px-5 py-3 rounded-full shadow-lg border border-[#451272]/20">
               {results.map((_, index) => (
                 <button 
                   key={index}
                   onClick={() => setCurrentIndex(index)}
                   className={`h-2.5 rounded-full transition-all duration-300 shadow-sm ${
-                    index === currentIndex ? "bg-brand-yellow w-10" : "bg-white/70 hover:bg-white w-2.5"
+                    index === currentIndex ? "bg-brand-yellow w-10" : "bg-white/50 hover:bg-white w-2.5"
                   }`}
                 />
               ))}

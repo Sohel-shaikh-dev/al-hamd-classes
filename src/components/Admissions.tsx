@@ -1,5 +1,6 @@
 import { PhoneCall, Trophy, Star, Users, CheckCircle2 } from 'lucide-react'
 import { FaWhatsapp } from 'react-icons/fa'
+import OptimizedImage from './OptimizedImage'
 
 const Admissions = () => {
   return (
@@ -86,7 +87,7 @@ const Admissions = () => {
 
           {/* Mobile Student Cutout (Absolute positioned for Mobile) */}
           <div className="block lg:hidden absolute top-[210px] sm:top-[200px] right-[-10px] w-[55%] sm:w-[45%] z-10 pointer-events-none">
-            <img 
+            <OptimizedImage 
               src="/Assets/alhamd_admissions_student.png" 
               alt="Successful Student" 
               className="w-full h-auto object-contain drop-shadow-xl"
@@ -102,7 +103,7 @@ const Admissions = () => {
               
               <div className="flex flex-col gap-3 lg:gap-4 mb-4 lg:mb-6">
                 <a 
-                  href="https://wa.me/919820204346" 
+                  href="https://wa.me/919870326626" 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full bg-white hover:bg-gray-50 text-[#11052C] py-3.5 px-4 lg:py-4 lg:px-5 rounded-full font-bold text-sm md:text-base flex items-center justify-between shadow-[0_8px_20px_rgba(255,255,255,0.2)] transition-transform hover:-translate-y-1 active:scale-95 group border border-white"
@@ -117,14 +118,14 @@ const Admissions = () => {
                 </a>
                 
                 <a 
-                  href="tel:+919820204346" 
+                  href="tel:+919870326626" 
                   className="w-full bg-gradient-to-r from-[#2C1052] to-[#451272] hover:from-[#1d0a36] hover:to-[#340c57] text-white py-3.5 px-4 lg:py-4 lg:px-5 rounded-full font-bold text-sm md:text-base flex items-center justify-between shadow-[0_10px_25px_rgba(69,18,114,0.4)] transition-transform hover:-translate-y-1 active:scale-95 group border border-white/10"
                 >
                   <div className="flex items-center gap-3">
                     <div className="w-7 h-7 lg:w-8 lg:h-8 rounded-full bg-white/20 flex items-center justify-center text-white shadow-inner">
                       <PhoneCall size={14} className="lg:w-4 lg:h-4" />
                     </div>
-                    Call 98202 04346
+                    Call +91 98703 26626
                   </div>
                   <span className="text-white/60 group-hover:text-white group-hover:translate-x-1 transition-all">→</span>
                 </a>
@@ -153,7 +154,7 @@ const Admissions = () => {
 
           {/* Right Area: Floating Student Cutout (Desktop Only) */}
           <div className="hidden lg:block relative z-10 w-[30%] self-end">
-            <img 
+            <OptimizedImage 
               src="/Assets/alhamd_admissions_student.png" 
               alt="Successful Student" 
               className="w-[120%] max-w-[550px] object-contain object-bottom -mb-2 translate-x-12"

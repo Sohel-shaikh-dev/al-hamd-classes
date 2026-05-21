@@ -1,5 +1,6 @@
 import { MapPin, Phone, Mail, Clock, Youtube, MessageSquare, Star, Users, ArrowRight, Play, Building, Train, Car, Navigation } from 'lucide-react'
 import { FaWhatsapp } from 'react-icons/fa'
+import OptimizedImage from './OptimizedImage'
 
 const Location = () => {
   return (
@@ -81,7 +82,6 @@ const Location = () => {
                   <div>
                     <h4 className="text-[#3B1D78] font-bold text-base md:text-lg leading-tight mb-1">CALL US</h4>
                     <p className="text-gray-500 text-[13px] md:text-sm font-medium">+91 98703 26626</p>
-                    <p className="text-gray-500 text-[13px] md:text-sm font-medium">+91 98202 04346</p>
                   </div>
                 </div>
                 <div className="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 group-hover:bg-[#EAE0F5] group-hover:text-[#3B1D78] transition-colors">
@@ -128,7 +128,7 @@ const Location = () => {
               
               <div className="w-full flex items-stretch gap-2 md:gap-3">
                 <div className="relative flex-grow h-14 md:h-16 rounded-xl overflow-hidden bg-gray-200">
-                  <img src="/Assets/classroom-contact.jpg" className="w-full h-full object-cover" alt="YouTube Preview" onError={(e) => { e.currentTarget.src = "/Assets/alhamd_subjects_classroom.png" }} />
+                  <OptimizedImage src="/Assets/classroom-contact.jpg" className="w-full h-full object-cover" alt="YouTube Preview" onError={(e: any) => { e.currentTarget.src = "/Assets/alhamd_subjects_classroom.png" }} />
                   <div className="absolute inset-0 bg-black/30 flex items-center justify-center transition-colors group-hover:bg-black/20">
                     <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-[#F5333F] shadow-lg">
                       <Play size={14} className="ml-0.5 fill-current" />
@@ -239,7 +239,7 @@ const Location = () => {
 
             {/* FLOATING CLASSROOM IMAGE (Desktop only, Bottom Right) */}
             <div className="hidden lg:block absolute bottom-6 right-6 w-48 xl:w-56 h-32 xl:h-36 rounded-2xl overflow-hidden shadow-2xl border-4 border-white z-10 bg-gray-100">
-              <img src="/Assets/alhamd_about_classroom.png" alt="Classroom view" className="w-full h-full object-cover" />
+              <OptimizedImage src="/Assets/alhamd_about_classroom.png" alt="Classroom view" className="w-full h-full object-cover" />
             </div>
           </div>
         </div>
@@ -256,7 +256,7 @@ const Location = () => {
             </div>
           </div>
           <a 
-            href="https://wa.me/919820204346?text=Hello%20AL-HAMD%20CLASSES,%20I%20want%20to%20book%20a%20visit%20for%20admission%20inquiry."
+            href="https://wa.me/919870326626?text=Hello%20AL-HAMD%20CLASSES,%20I%20want%20to%20book%20a%20visit%20for%20admission%20inquiry."
             target="_blank"
             rel="noopener noreferrer"
             className="w-full md:w-auto bg-[#F5333F] hover:bg-[#D71D3A] text-white py-3.5 px-8 md:py-4 md:px-10 rounded-xl font-bold text-[13px] md:text-sm flex items-center justify-center gap-2 transition-transform hover:-translate-y-0.5 hover:shadow-xl shadow-[#F5333F]/30 whitespace-nowrap cursor-pointer"

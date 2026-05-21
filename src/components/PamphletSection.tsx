@@ -1,4 +1,5 @@
 import { CheckCircle2 } from 'lucide-react'
+import OptimizedImage from './OptimizedImage'
 
 const PamphletSection = () => {
   const benefits = [
@@ -25,7 +26,7 @@ const PamphletSection = () => {
           <div className="w-full lg:w-1/2 group">
             <div className="relative">
               <div className="absolute inset-0 bg-brand-magenta rounded-[2rem] rotate-3 scale-105 opacity-10 group-hover:rotate-6 transition-transform"></div>
-              <img 
+              <OptimizedImage 
                 src="/Alhamd Pamplet 1.jpeg" 
                 alt="AL-HAMD Pamphlet" 
                 className="rounded-[2rem] shadow-2xl relative z-10 w-full hover:scale-[1.02] transition-transform duration-500 cursor-zoom-in"

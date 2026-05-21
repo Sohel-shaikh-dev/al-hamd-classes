@@ -1,6 +1,31 @@
 import { BookOpen, GraduationCap, School, UserCheck, MessageCircle } from 'lucide-react'
+import { useState, useEffect } from 'react'
 
 const Courses = () => {
+  const [typedText, setTypedText] = useState('')
+  const fullText = "ACADEMIC PROGRAMS"
+  
+  useEffect(() => {
+    let timeoutId: ReturnType<typeof setTimeout>;
+    
+    const type = (currentText: string, currentIndex: number) => {
+      if (currentIndex < fullText.length) {
+        setTypedText(currentText + fullText[currentIndex]);
+        timeoutId = setTimeout(() => type(currentText + fullText[currentIndex], currentIndex + 1), 100);
+      } else {
+        // Pause at the end, then restart
+        timeoutId = setTimeout(() => {
+          setTypedText('');
+          type('', 0);
+        }, 3000);
+      }
+    };
+    
+    type('', 0);
+    
+    return () => clearTimeout(timeoutId);
+  }, [])
+
   const handleInquiry = (courseName: string) => {
     const message = `Hello AL-HAMD CLASSES, I am interested in ${courseName}. Please share details.`;
     const whatsappUrl = `https://wa.me/919870326626?text=${encodeURIComponent(message)}`;
@@ -46,15 +71,21 @@ const Courses = () => {
     }
   ]
 
+  // Split typed text to color "PROGRAMS" differently
+  const academicPart = typedText.substring(0, 9); // "ACADEMIC " (length 9)
+  const programsPart = typedText.length > 9 ? typedText.substring(9) : "";
+
   return (
     <section className="py-24 bg-white relative" id="courses">
       {/* Background decoration */}
       <div className="absolute top-0 w-full h-1/2 bg-gradient-to-b from-brand-cream/50 to-transparent"></div>
       
       <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-6xl font-bold text-brand-dark mb-4 uppercase tracking-tighter">
-            Academic <span className="text-brand-purple">Programs</span>
+        <div className="text-center mb-20 min-h-[120px]">
+          <h2 className="text-4xl md:text-6xl font-bold text-brand-dark mb-4 tracking-tighter">
+            {academicPart}
+            <span className="text-brand-purple">{programsPart}</span>
+            <span className="inline-block w-[3px] h-[40px] md:h-[60px] ml-2 bg-brand-magenta animate-pulse align-middle"></span>
           </h2>
           <div className="w-32 h-2 bg-gradient-to-r from-brand-purple to-brand-magenta mx-auto rounded-full"></div>
           <p className="mt-8 text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto font-light leading-relaxed">
