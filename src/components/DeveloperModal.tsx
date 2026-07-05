@@ -3,9 +3,9 @@ import {
   X, Star, Users, Zap, Rocket, Code, BrainCircuit, 
   PenTool, LayoutDashboard, 
   Layers, Instagram, Linkedin, Github, Youtube, MessageCircle, Send,
-  Trophy, Facebook, Mail, Globe
+  Trophy, Facebook, Mail, Globe, Database, ChevronLeft, ChevronRight
 } from 'lucide-react';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 interface DeveloperModalProps {
   isOpen: boolean;
@@ -13,11 +13,13 @@ interface DeveloperModalProps {
 }
 
 const DeveloperModal = ({ isOpen, onClose }: DeveloperModalProps) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
   
   // Prevent scrolling when modal is open
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
+      setCurrentIndex(0); // Reset to first developer on open
     } else {
       document.body.style.overflow = 'unset';
     }
@@ -26,31 +28,84 @@ const DeveloperModal = ({ isOpen, onClose }: DeveloperModalProps) => {
     };
   }, [isOpen]);
 
-  const mobileStats = [
-    { icon: Star, number: "15+", text: "PROJECTS\nCOMPLETED" },
-    { icon: Users, number: "8+", text: "HAPPY\nCLIENTS" },
-    { icon: Zap, number: "24/7", text: "SUPPORT\nAVAILABLE" },
-    { icon: Trophy, number: "100%", text: "CLIENT\nSATISFACTION" }
+  const developers = [
+    {
+      nameFirst: "SOHEL",
+      nameLast: "SHAIKH",
+      role: "Founder of AI MetaWorld",
+      image: "/Assets/developer.jpg",
+      description: "I build premium AI-powered digital experiences, modern websites, and creative solutions that help brands grow and stand out.",
+      expertise: [
+        { icon: Code, text: "Web Development" },
+        { icon: BrainCircuit, text: "AI Solutions" },
+        { icon: PenTool, text: "UI/UX Design" },
+        { icon: Star, text: "Branding" },
+        { icon: LayoutDashboard, text: "Power BI Dashboards" },
+        { icon: Layers, text: "React & Supabase" }
+      ],
+      stats: [
+        { icon: Star, number: "15+", text: "PROJECTS\nCOMPLETED" },
+        { icon: Users, number: "8+", text: "HAPPY\nCLIENTS" },
+        { icon: Zap, number: "24/7", text: "SUPPORT\nAVAILABLE" },
+        { icon: Trophy, number: "100%", text: "CLIENT\nSATISFACTION" }
+      ],
+      socials: [
+        { icon: Globe, color: "hover:shadow-[0_0_15px_#F4C35A] border-[#F4C35A]/50 hover:border-[#F4C35A] text-[#F4C35A]", link: "https://ai-metaworld.vercel.app/#" },
+        { icon: Linkedin, color: "hover:shadow-[0_0_15px_#0077B5] border-[#0077B5]/50 hover:border-[#0077B5] text-[#0077B5]", link: "https://www.linkedin.com/in/sohel-shaikhh/" },
+        { icon: Github, color: "hover:shadow-[0_0_15px_#ffffff] border-white/50 hover:border-white text-gray-300", link: "https://github.com/Sohel-shaikh-dev" },
+        { icon: Instagram, color: "hover:shadow-[0_0_15px_#E1306C] border-[#E1306C]/50 hover:border-[#E1306C] text-[#E1306C]", link: "https://instagram.com/ai_metaworld" },
+        { icon: Facebook, color: "hover:shadow-[0_0_15px_#1877F2] border-[#1877F2]/50 hover:border-[#1877F2] text-[#1877F2]", link: "https://www.facebook.com/share/1asBpmQEbw/" },
+        { icon: Youtube, color: "hover:shadow-[0_0_15px_#FF0000] border-[#FF0000]/50 hover:border-[#FF0000] text-[#FF0000]", link: "https://www.youtube.com/@Aimetaworld" },
+        { icon: Mail, color: "hover:shadow-[0_0_15px_#EA4335] border-[#EA4335]/50 hover:border-[#EA4335] text-[#EA4335]", link: "mailto:aimetaworldd@gmail.com" }
+      ],
+      ctaLink: "https://wa.me/917718938615?text=Hello%20AI%20MetaWorld,%0AI%20want%20to%20build%20a%20premium%20website.%0ALet's%20discuss%20the%20project.",
+      ctaText: "LET'S BUILD SOMETHING AMAZING",
+      footerText: "I'm open to exciting opportunities!"
+    },
+    {
+      nameFirst: "SAMEER",
+      nameLast: "ANSARI",
+      role: "Python & Flask Developer",
+      image: "/Assets/sameer.jpeg", // Updated to use sameer.jpeg
+      description: "Passionate Python & Flask developer focused on building scalable web applications, AI-powered systems, and modern digital experiences with clean backend architecture and responsive UI design.",
+      expertise: [
+        { icon: Code, text: "Python Development" },
+        { icon: Layers, text: "Flask Backend" },
+        { icon: LayoutDashboard, text: "Web Development" },
+        { icon: BrainCircuit, text: "AI Solutions" },
+        { icon: PenTool, text: "UI/UX Design" },
+        { icon: Zap, text: "REST APIs" },
+        { icon: Globe, text: "Web Scraping" },
+        { icon: Database, text: "PostgreSQL Database" },
+        { icon: Github, text: "Git & GitHub" },
+        { icon: Rocket, text: "Responsive Websites" }
+      ],
+      stats: [
+        { icon: Star, number: "15+", text: "PROJECTS\nCOMPLETED" },
+        { icon: Code, number: "PRO", text: "BACKEND &\nFLASK" },
+        { icon: BrainCircuit, number: "AI", text: "AUTOMATION\nFOCUSED" },
+        { icon: Zap, number: "24/7", text: "LEARNING\nMINDSET" }
+      ],
+      socials: [
+        { icon: Linkedin, color: "hover:shadow-[0_0_15px_#0077B5] border-[#0077B5]/50 hover:border-[#0077B5] text-[#0077B5]", link: "https://www.linkedin.com/search/results/all/?keywords=Ansari+Mohammed+Sameer+Naseem" },
+        { icon: Github, color: "hover:shadow-[0_0_15px_#ffffff] border-white/50 hover:border-white text-gray-300", link: "https://github.com/sameer-ansari-dev" },
+        { icon: Mail, color: "hover:shadow-[0_0_15px_#EA4335] border-[#EA4335]/50 hover:border-[#EA4335] text-[#EA4335]", link: "mailto:sameeransari9867xb@gmail.com" }
+      ],
+      ctaLink: "mailto:sameeransari9867xb@gmail.com",
+      ctaText: "LET’S BUILD SOMETHING AMAZING",
+      footerText: "Open to freelance projects, collaborations, and innovative opportunities."
+    }
   ];
 
-  const skills = [
-    { icon: Code, text: "Web Development" },
-    { icon: BrainCircuit, text: "AI Solutions" },
-    { icon: PenTool, text: "UI/UX Design" },
-    { icon: Star, text: "Branding" },
-    { icon: LayoutDashboard, text: "Power BI Dashboards" },
-    { icon: Layers, text: "React & Supabase" }
-  ];
+  const nextDeveloper = () => {
+    setCurrentIndex((prev) => (prev + 1) % developers.length);
+  };
 
-  const socialLinks = [
-    { icon: Globe, color: "hover:shadow-[0_0_15px_#F4C35A] border-[#F4C35A]/50 hover:border-[#F4C35A] text-[#F4C35A]", link: "https://ai-metaworld.vercel.app/#" },
-    { icon: Linkedin, color: "hover:shadow-[0_0_15px_#0077B5] border-[#0077B5]/50 hover:border-[#0077B5] text-[#0077B5]", link: "https://www.linkedin.com/in/sohel-shaikhh/" },
-    { icon: Github, color: "hover:shadow-[0_0_15px_#ffffff] border-white/50 hover:border-white text-gray-300", link: "https://github.com/Sohel-shaikh-dev" },
-    { icon: Instagram, color: "hover:shadow-[0_0_15px_#E1306C] border-[#E1306C]/50 hover:border-[#E1306C] text-[#E1306C]", link: "https://instagram.com/ai_metaworld" },
-    { icon: Facebook, color: "hover:shadow-[0_0_15px_#1877F2] border-[#1877F2]/50 hover:border-[#1877F2] text-[#1877F2]", link: "https://www.facebook.com/share/1asBpmQEbw/" },
-    { icon: Youtube, color: "hover:shadow-[0_0_15px_#FF0000] border-[#FF0000]/50 hover:border-[#FF0000] text-[#FF0000]", link: "https://www.youtube.com/@Aimetaworld" },
-    { icon: Mail, color: "hover:shadow-[0_0_15px_#EA4335] border-[#EA4335]/50 hover:border-[#EA4335] text-[#EA4335]", link: "mailto:aimetaworldd@gmail.com" }
-  ];
+  const prevDeveloper = () => {
+    setCurrentIndex((prev) => (prev - 1 + developers.length) % developers.length);
+  };
+
+  const currentDev = developers[currentIndex];
 
   return (
     <AnimatePresence>
@@ -84,110 +139,161 @@ const DeveloperModal = ({ isOpen, onClose }: DeveloperModalProps) => {
             {/* ========================================================= */}
             <div className="flex flex-col w-full h-full p-5 sm:p-6 overflow-y-auto custom-scrollbar relative z-10">
               
-              {/* Header: ABOUT DEVELOPER + Close */}
-              <div className="flex items-center justify-between mb-3 relative">
+              {/* Header: ABOUT DEVELOPERS + Close */}
+              <div className="flex items-center justify-between mb-4 relative">
                 <div className="flex items-center gap-1.5 mx-auto">
                   <Users className="text-[#E0A82E]" size={14} />
-                  <span className="text-[#E0A82E] text-[11px] font-bold tracking-[0.15em] uppercase">ABOUT DEVELOPER</span>
+                  <span className="text-[#E0A82E] text-[11px] font-bold tracking-[0.15em] uppercase">ABOUT DEVELOPERS</span>
                 </div>
-                <button onClick={onClose} className="absolute right-0 text-gray-400 hover:text-white bg-white/5 border border-white/10 hover:border-white/20 rounded-full p-1.5 transition-colors">
+                <button onClick={onClose} className="absolute right-0 text-gray-400 hover:text-white bg-white/5 border border-white/10 hover:border-white/20 rounded-full p-1.5 transition-colors z-20">
                   <X size={16} />
                 </button>
               </div>
 
-              {/* Profile Image */}
-              <div className="relative mx-auto mb-3 group flex flex-col items-center">
-                <div className="absolute inset-0 bg-[#F4C35A] rounded-full blur-xl opacity-30 animate-pulse-slow"></div>
-                <div className="relative w-32 h-32 rounded-full p-[2px] bg-gradient-to-b from-[#F4C35A] to-[#8C6011] shadow-[0_0_20px_rgba(244,195,90,0.3)]">
-                  <div className="w-full h-full rounded-full overflow-hidden bg-[#0A0A0A] border-[3px] border-[#0A0A0A]">
-                    <img src="/Assets/developer.jpg" alt="Developer" className="w-full h-full object-cover object-[center_15%]" />
-                  </div>
-                </div>
-              </div>
-
-              {/* Name & Role */}
-              <div className="text-center mb-3">
-                <h2 className="text-2xl font-black leading-none mb-1 tracking-tight">
-                  <span className="text-white">SOHEL </span>
-                  <span className="text-[#F4C35A]">SHAIKH</span>
-                </h2>
-                <p className="text-gray-400 text-[9px] tracking-[0.2em] uppercase font-semibold">
-                  Founder of AI MetaWorld
-                </p>
-                <div className="flex items-center justify-center gap-3 mt-2">
-                  <div className="h-px bg-[#F4C35A]/30 w-8"></div>
-                  <Star className="text-[#F4C35A]" size={10} fill="#F4C35A" />
-                  <div className="h-px bg-[#F4C35A]/30 w-8"></div>
-                </div>
-              </div>
-
-              {/* Description */}
-              <p className="text-center text-gray-300 text-xs leading-relaxed mb-4 px-2 font-medium">
-                I build premium AI-powered digital experiences, modern websites, and creative solutions that help brands grow and stand out.
-              </p>
-
-              {/* Expertise Box */}
-              <div className="border border-[#F4C35A]/20 bg-[#0A0A0A]/60 backdrop-blur-md rounded-2xl p-3 mb-3 shadow-[0_5px_15px_rgba(0,0,0,0.3)]">
-                <h4 className="flex items-center gap-1.5 text-[#E0A82E] font-bold text-[10px] tracking-widest uppercase mb-2.5">
-                  <Rocket size={12} /> EXPERTISE
-                </h4>
-                <div className="flex flex-wrap justify-center gap-2">
-                  {skills.map((skill, idx) => (
-                    <div key={idx} className="flex items-center gap-1.5 bg-[#1A1A1A] border border-[#F4C35A]/30 px-2 py-1 rounded-lg">
-                      <skill.icon size={12} className="text-[#F4C35A]" />
-                      <span className="text-gray-200 text-[10px] font-medium">{skill.text}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Stats Box */}
-              <div className="border border-[#F4C35A]/20 bg-[#0A0A0A]/60 backdrop-blur-md rounded-[1rem] p-3 mb-4 shadow-[0_5px_15px_rgba(0,0,0,0.3)]">
-                <div className="grid grid-cols-4 gap-1 divide-x divide-white/10">
-                  {mobileStats.map((stat, idx) => (
-                    <div key={idx} className="flex flex-col items-center justify-start text-center px-1">
-                      <stat.icon className="text-[#E0A82E] mb-1.5" size={16} strokeWidth={1.5} />
-                      <span className="text-[#F4C35A] text-lg font-black mb-1 leading-none">{stat.number}</span>
-                      <span className="text-gray-400 text-[8px] font-bold tracking-wider uppercase whitespace-pre-line leading-tight">
-                        {stat.text}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Connect With Me */}
-              <div className="mb-4">
-                <div className="flex flex-wrap justify-center items-center gap-2">
-                  {socialLinks.map((social, idx) => (
-                    <a 
+              {/* Slider Navigation Controls */}
+              <div className="flex items-center justify-between mb-6 z-10 bg-[#111111]/80 backdrop-blur-md rounded-full px-2 py-2 border border-[#F4C35A]/10">
+                <button 
+                  onClick={prevDeveloper}
+                  className="flex items-center gap-1 text-[#F4C35A] bg-transparent hover:bg-[#F4C35A]/10 px-3 py-1.5 rounded-full transition-colors text-xs font-bold tracking-wider"
+                >
+                  <ChevronLeft size={16} strokeWidth={2.5} />
+                </button>
+                
+                {/* Dots indicator */}
+                <div className="flex gap-3">
+                  {developers.map((_, idx) => (
+                    <button
                       key={idx}
-                      href={social.link}
+                      onClick={() => setCurrentIndex(idx)}
+                      className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                        idx === currentIndex ? 'bg-[#F4C35A] w-6 shadow-[0_0_10px_#F4C35A]' : 'bg-white/20 hover:bg-white/40'
+                      }`}
+                    />
+                  ))}
+                </div>
+
+                <button 
+                  onClick={nextDeveloper}
+                  className="flex items-center gap-1 text-[#F4C35A] bg-transparent hover:bg-[#F4C35A]/10 px-3 py-1.5 rounded-full transition-colors text-xs font-bold tracking-wider"
+                >
+                  <ChevronRight size={16} strokeWidth={2.5} />
+                </button>
+              </div>
+
+              {/* Developer Profile with Animation */}
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentIndex}
+                  initial={{ opacity: 0, x: 10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -10 }}
+                  transition={{ duration: 0.2 }}
+                  className="flex flex-col flex-grow"
+                >
+                  {/* Profile Image */}
+                  <div className="relative mx-auto mb-3 group flex flex-col items-center">
+                    <div className="absolute inset-0 bg-[#F4C35A] rounded-full blur-xl opacity-30 animate-pulse-slow"></div>
+                    <div className="relative w-32 h-32 rounded-full p-[2px] bg-gradient-to-b from-[#F4C35A] to-[#8C6011] shadow-[0_0_20px_rgba(244,195,90,0.3)] flex items-center justify-center">
+                      <div className="w-full h-full rounded-full overflow-hidden bg-[#0A0A0A] border-[3px] border-[#0A0A0A] flex items-center justify-center relative">
+                        {currentDev.image ? (
+                          <img src={currentDev.image} alt={currentDev.nameFirst} className="w-full h-full object-cover object-[center_15%]" />
+                        ) : (
+                          <div className="w-full h-full flex flex-col items-center justify-center bg-[#111] text-[#E0A82E]/40">
+                            <Users size={32} />
+                            <span className="text-[8px] font-bold mt-1 tracking-widest uppercase">PHOTO</span>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Name & Role */}
+                  <div className="text-center mb-3">
+                    <h2 className="text-2xl font-black leading-none mb-1 tracking-tight">
+                      <span className="text-white">{currentDev.nameFirst} </span>
+                      <span className="text-[#F4C35A]">{currentDev.nameLast}</span>
+                    </h2>
+                    <p className="text-gray-400 text-[9px] tracking-[0.2em] uppercase font-semibold">
+                      {currentDev.role}
+                    </p>
+                    <div className="flex items-center justify-center gap-3 mt-2">
+                      <div className="h-px bg-[#F4C35A]/30 w-8"></div>
+                      <Star className="text-[#F4C35A]" size={10} fill="#F4C35A" />
+                      <div className="h-px bg-[#F4C35A]/30 w-8"></div>
+                    </div>
+                  </div>
+
+                  {/* Description */}
+                  <p className="text-center text-gray-300 text-xs leading-relaxed mb-4 px-2 font-medium h-[48px] overflow-hidden flex items-center justify-center">
+                    {currentDev.description}
+                  </p>
+
+                  {/* Expertise Box */}
+                  <div className="border border-[#F4C35A]/20 bg-[#0A0A0A]/60 backdrop-blur-md rounded-2xl p-3 mb-3 shadow-[0_5px_15px_rgba(0,0,0,0.3)]">
+                    <h4 className="flex items-center gap-1.5 text-[#E0A82E] font-bold text-[10px] tracking-widest uppercase mb-2.5">
+                      <Rocket size={12} /> EXPERTISE
+                    </h4>
+                    <div className="flex flex-wrap justify-center gap-2">
+                      {currentDev.expertise.map((skill, sIdx) => (
+                        <div key={sIdx} className="flex items-center gap-1.5 bg-[#1A1A1A] border border-[#F4C35A]/30 px-2 py-1 rounded-lg">
+                          <skill.icon size={12} className="text-[#F4C35A]" />
+                          <span className="text-gray-200 text-[10px] font-medium">{skill.text}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Stats Box */}
+                  <div className="border border-[#F4C35A]/20 bg-[#0A0A0A]/60 backdrop-blur-md rounded-[1rem] p-3 mb-4 shadow-[0_5px_15px_rgba(0,0,0,0.3)]">
+                    <div className="grid grid-cols-4 gap-1 divide-x divide-white/10">
+                      {currentDev.stats.map((stat, stIdx) => (
+                        <div key={stIdx} className="flex flex-col items-center justify-start text-center px-1">
+                          <stat.icon className="text-[#E0A82E] mb-1.5" size={16} strokeWidth={1.5} />
+                          <span className="text-[#F4C35A] text-lg font-black mb-1 leading-none">{stat.number}</span>
+                          <span className="text-gray-400 text-[8px] font-bold tracking-wider uppercase whitespace-pre-line leading-tight">
+                            {stat.text}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="mt-auto">
+                    {/* Connect With Me */}
+                    <div className="mb-4">
+                      <div className="flex flex-wrap justify-center items-center gap-2">
+                        {currentDev.socials.map((social, socIdx) => (
+                          <a 
+                            key={socIdx}
+                            href={social.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={`w-9 h-9 rounded-full bg-[#111111] border flex items-center justify-center transition-all ${social.color}`}
+                          >
+                            <social.icon size={14} />
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* CTA */}
+                    <a 
+                      href={currentDev.ctaLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`w-9 h-9 rounded-full bg-[#111111] border flex items-center justify-center transition-all ${social.color}`}
+                      className="w-full bg-gradient-to-r from-[#8C6011] via-[#E0A82E] to-[#F4C35A] text-black font-black py-3 rounded-xl flex items-center justify-center gap-2 mb-3 shadow-[0_10px_20px_rgba(224,168,46,0.3)]"
                     >
-                      <social.icon size={14} />
+                      <Send size={16} strokeWidth={2.5} />
+                      <span className="text-xs tracking-wide">{currentDev.ctaText}</span>
                     </a>
-                  ))}
-                </div>
-              </div>
 
-              {/* CTA */}
-              <a 
-                href="https://wa.me/917718938615?text=Hello%20AI%20MetaWorld,%0AI%20want%20to%20build%20a%20premium%20website.%0ALet's%20discuss%20the%20project."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full bg-gradient-to-r from-[#8C6011] via-[#E0A82E] to-[#F4C35A] text-black font-black py-3 rounded-xl flex items-center justify-center gap-2 mb-3 shadow-[0_10px_20px_rgba(224,168,46,0.3)]"
-              >
-                <Send size={16} strokeWidth={2.5} />
-                <span className="text-xs tracking-wide">LET'S BUILD SOMETHING AMAZING</span>
-              </a>
-
-              {/* Bottom Text */}
-              <p className="text-gray-400 text-[10px] text-center flex items-center justify-center gap-1.5 pb-2">
-                <MessageCircle size={12} /> I'm open to exciting opportunities!
-              </p>
+                    {/* Bottom Text */}
+                    <p className="text-gray-400 text-[10px] text-center flex items-center justify-center gap-1.5 pb-2">
+                      <MessageCircle size={12} /> {currentDev.footerText}
+                    </p>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
             </div>
           </motion.div>
         </motion.div>
